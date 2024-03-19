@@ -1,0 +1,36 @@
+<body class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <div class="mb-4">
+                <form (submit)="onSubmit()">
+                    <div class="mb-3">
+                      <label for="username" class="form-label">Username</label>
+                      <input type="text" class="form-control" id="username" [(ngModel)]="credentials.username" name="username">
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" [(ngModel)]="credentials.password" name="password">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success">Login</button>
+                  </form>
+                  <br>
+                  <a href="https://localhost:8000/register" class="btn btn-primary">¿No tienes cuenta? Regístrate</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+  
+  
+  
+    
+  
+

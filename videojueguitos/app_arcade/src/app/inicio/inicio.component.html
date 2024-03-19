@@ -1,0 +1,77 @@
+<br>
+<div class="container py-5">
+  <h1 class="bg-dark p-3 rounded text-white text-center">Todos los juegos arcade en una sola pagina</h1>
+    
+  <!--Barra de busqueda y desplegable de generos-->
+  <div class="input-group mb-3">
+    <input type="text" class="form-control bg-dark text-white custom-placeholder" placeholder="Buscar juegos..." [(ngModel)]="filtrar" (input)="buscar()">
+    <div class="input-group-append">
+      <select class="form-select bg-dark text-white" [(ngModel)]="generoSeleccionado" (change)="filtrarGenero()">
+        <option value="0" selected>Todos</option>
+        @for(genero of generos; track $index){
+          <option [value]="genero.id">{{ genero.nombre }}</option>
+        }  
+      </select>
+    </div>
+  </div>
+
+  <!--CheckBox-->
+  <div class="form-check text-white">
+    <input class="form-check-input" type="checkbox" id="votosCheck" [(ngModel)]="votos" (change)="filtrarGenero()">
+    <label class="form-check-label" for="votosCheck">Ordenar por votos</label>
+  </div>
+    
+  <!--Impresion de cards con los datos de los juegos-->
+  <div class="container mt-5">
+    <div class="row">
+      @for(juego of juegos; track $index){
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div class="mb-4">
+             
+                <img [src]="'data:image;base64,' + juego.imagen" alt="{{ juego.nombre }}" class="img-fluid" width="120px" height="120px">
+                <h3>{{ juego.nombre }}</h3>
+                <p>{{ juego.descripcion }}</p>
+              </div>  
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+
+  <!--
+    <script>
+        const option = document.createElement("option");
+  option.value = genero.id;
+  option.textContent = genero.nombre;
+  option.addEventListener("mouseover", () => {
+    mostrarDescripcion(genero.descripcion);
+  });
+  option.addEventListener("mouseout", () => {
+    ocultarDescripcion();
+  });
+  selectGeneros.appendChild(option);
+    </script>
+    -->
+
+    <!--
+function mostrarDescripcion(texto) {
+  descripcion.textContent = texto;
+  descripcion.style.display = "block";
+}
+
+function ocultarDescripcion() {
+  descripcion.textContent = "";
+  descripcion.style.display = "none";
+}
+
+// Mover el div de descripción junto con el cursor
+document.addEventListener("mousemove", (event) => {
+  descripcion.style.top = event.clientY + 10 + "px";
+  descripcion.style.left = event.clientX + 10 + "px";
+});
+    -->

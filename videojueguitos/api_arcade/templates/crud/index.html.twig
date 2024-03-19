@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body bg-dark">
+                        <h5 class="card-title">Juegos</h5>
+                        <p class="card-text">Modifica y añade Juegos</p>
+                        <br>
+                        <a href="{{ path('app_juegos_index') }}" class="btn btn-primary">Ver juegos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body bg-dark">
+                        <h5 class="card-title">Géneros</h5>
+                        <p class="card-text">Modifica y añade Generos</p>
+                        <a href="{{ path('app_genero_index') }}" class="btn btn-primary">Ver géneros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+body {
+    background: linear-gradient(to bottom right, #005C4A, #0F3057);
+    /* Para navegadores que no admiten degradados */
+    background: -webkit-linear-gradient(top left, #005C4A, #0F3057);
+    background: -moz-linear-gradient(top left, #005C4A, #0F3057);
+    background: -o-linear-gradient(top left, #005C4A, #0F3057);
+    color: white;
+}
+td{
+    color: aliceblue;
+}
+th{
+    color: black;
+}

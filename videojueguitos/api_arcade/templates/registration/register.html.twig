@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Registro{% endblock %}</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% block stylesheets %}
+
+    {% endblock %}
+</head>
+<style>
+  body {
+    background: linear-gradient(to bottom right, #005C4A, #0F3057);
+    /* Para navegadores que no admiten degradados */
+    background: -webkit-linear-gradient(top left, #005C4A, #0F3057);
+    background: -moz-linear-gradient(top left, #005C4A, #0F3057);
+    background: -o-linear-gradient(top left, #005C4A, #0F3057);
+}
+
+</style>
+
+<body>
+    </div>
+    <a class="nav-link" href="http://localhost:4200/inicio" class="btn btn-primary">Volver a la aplicacion</a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center mt-5 mb-4">Registrarse</h1>
+
+                {{ form_errors(registrationForm) }}
+
+                {{ form_start(registrationForm) }}
+
+                <div class="mb-3">
+                    {{ form_row(registrationForm.username, {'attr': {'class': 'form-control', 'placeholder':
+                    'Username'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(registrationForm.plainPassword, {'label': 'Password', 'attr': {'class':
+                    'form-control'}}) }}
+                </div>
+                <div class="mb-3 form-check">
+                    {{ form_row(registrationForm.agreeTerms, {'label': 'I agree to the terms', 'attr': {'class':
+                    'form-check-input'}}) }}
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                </div>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+
+</body>

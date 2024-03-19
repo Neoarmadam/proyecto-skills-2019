@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo genero{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Crear Genero</h1>
+        {{ include('genero/_form.html.twig') }}
+        <a href="{{ path('app_genero_index') }}" class="btn btn-secondary mt-3">Volver a generos</a>
+    </div>
+{% endblock %}

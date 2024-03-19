@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista de Géneros{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Lista de Géneros</h1>
+        <a href="{{ path('app_genero_new') }}" class="btn btn-success">Crear</a>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for genero in generos %}
+                <tr>
+                    <td>{{ genero.id }}</td>
+                    <td>{{ genero.nombre }}</td>
+                    <td>{{ genero.descripcion }}</td>
+                    <td>
+                        <a href="{{ path('app_genero_show', {'id': genero.id}) }}" class="btn btn-info btn-sm">Mostrar</a>
+                        <a href="{{ path('app_genero_edit', {'id': genero.id}) }}" class="btn btn-primary btn-sm">Editar</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">No se encontraron registros</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+{% endblock %}

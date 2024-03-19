@@ -1,0 +1,45 @@
+/*Fondo global */
+body {
+    background-image: url('assets/img/backgraunde.jpg');
+    /* Otras propiedades de estilo */
+}
+
+/*Estilo global de las cards */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-image: url('assets/img/backgraunde2.jpg');
+  color: white;
+
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  border-radius: 8px;
+}
+
+/* Para poner el texto del placeholder del buscador en blanco*/
+.custom-placeholder::placeholder {
+  color: white;
+}
+
+/*La mierda del monigote*/
+.manigote {
+  width: 100px; 
+  height: 100px; 
+  background-image: url('assets/img/goku.webp');
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: swingManigote 2s ease-in-out infinite alternate; /* Animación de balanceo */
+}
+@keyframes swingManigote {
+  from {
+    transform: translate(-50%, -50%) rotate(-10deg); /* Rotación inicial */
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(10deg); /* Rotación final */
+  }
+}

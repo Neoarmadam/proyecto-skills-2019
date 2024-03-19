@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista de Juegos{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Lista de Juegos</h1>
+        <a href="{{ path('app_juegos_new') }}" class="btn btn-success">Crear</a>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Votos positivos</th>
+                    <th scope="col">Votos negativos</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for juego in juegos %}
+                    <tr>
+                        <td>{{ juego.id }}</td>
+                        <td>{{ juego.nombre }}</td>
+                        <td>{{ juego.descripcion }}</td>
+                        <td>{{ juego.votosPositivos }}</td>
+                        <td>{{ juego.votosNegativos }}</td>
+                        <td>{{ juego.imagen }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{{ path('app_juegos_show', {'id': juego.id}) }}" class="btn btn-info btn-sm">Ver</a>
+                                <a href="{{ path('app_juegos_edit', {'id': juego.id}) }}" class="btn btn-primary btn-sm">Editar</a>
+                            </div>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">No se encontraron registros</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
